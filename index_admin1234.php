@@ -30,6 +30,9 @@ if(isset($_SESSION["typeConnexion"]))
     $Vue->addToCorps(new Vue_AfficherMessage("Debug : typeConnexion $_SESSION[typeConnexion]"));
 if(isset($_SESSION["idUtilisateur"]))
     $Vue->addToCorps(new Vue_AfficherMessage("Debug : idUtilisateur $_SESSION[idUtilisateur]"));
+if(isset($_SESSION["niveauAutorisation"]))
+    $Vue->addToCorps(new Vue_AfficherMessage("niveauAutorisation : niveauAutorisation$_SESSION[niveauAutorisation]"));
+
 
 
 
@@ -50,6 +53,9 @@ switch ($case) {
         break;
     case "Gerer_monCompte":
         include "Controleur/Controleur_Gerer_monCompte.php";
+        break;
+    case "Gerer_MonCompte_Salarie.php";
+        include "Controleur/Controleur_Gerer_MonCompte_Salarie.php";
         break;
     default:
         include "Controleur/Controleur_visiteur_admin.php";

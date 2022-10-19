@@ -11,14 +11,16 @@ use PHPMailer\PHPMailer\PHPMailer ;
 use function App\Fonctions\GenereMDP;
 
 //Obligatoire pour avoir l’objet phpmailer qui marche
-
+if($_SESSION["niveauAutorisation"] != 3){
+    die("Vous n'avez rien a faire ici");
+}
 /**
  * Ce contrôleur est dédié à la gestion des entreprises partenaires.
  * Toutes les pages de cette user story renvoie sur ce contrôleur.
  * Le tri entre les actions est fait sur l'existence des boutons submit. Deux boutons ne doivent pas avoir le même nom ! ;)
  */
 $Vue->setEntete(new Vue_Structure_Entete());
-$Vue->setMenu(new Vue_Menu_Administration());
+$Vue->setMenu(new Vue_Menu_Administration($_SESSION["niveauAutorisation"]));
 
 switch ($action) {
     case "Modifer":

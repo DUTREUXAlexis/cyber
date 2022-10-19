@@ -1,0 +1,23 @@
+@startuml
+
+Abonné -- (se désabonner à la newsletter)
+Visiteur -- (s'abonner à la newsletter)
+Visiteur -- (Consulter)
+Rédacteur -- (Rédiger une page article)
+Rédacteur -- (Gérer les rubriques)
+Rédacteur -- (Gérer le catalogue)
+Commercial -- (Gérer les entreprises clientes)
+Commercial -- (Gérer les commandes des entreprises)
+Administrateur -- (Gérer les rédacteurs)
+Administrateur -- (importer)
+Administrateur -- (gérer les comptes du personnel)
+Administrateur-->Rédacteur
+Visiteur-->Abonné
+Rédacteur-->Commercial
+
+@enduml
+
+
+
+
+@enduml
